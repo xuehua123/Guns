@@ -1,6 +1,7 @@
 package cn.stylefeng.guns.modular.test.service;
 
 
+import net.bytebuddy.implementation.bytecode.Throw;
 import org.apache.tomcat.jni.Time;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -40,7 +41,7 @@ public class StuAuthInfo {
 
     }
 
-    private void oldAccount(WebDriver driver) {
+    private void oldAccount (WebDriver driver) throws InterruptedException {
         //解析yml文件
         Map<String, Object> map = YamlMapService.returnYmlMap();
         Map<String,Object> authInfo = (Map<String, Object>) map.get("authInfo");
@@ -56,11 +57,12 @@ public class StuAuthInfo {
                 System.out.println("进入步骤二");
                 break;
             }
+            Thread.sleep(2);
         }
         //如果在步骤二则返回步骤一
         if(isElementExist(driver,step2.get("cancelButton").toString())){
             driver.findElement(By.xpath(step2.get("cancelButton").toString())).click();
-            Time.sleep(1);
+            Thread.sleep(1);
             driver.switchTo().alert().accept();
             while (true){
                 if (driver.getCurrentUrl().equals(step1.get("step1Url"))){
@@ -70,19 +72,19 @@ public class StuAuthInfo {
             }
         }
         //步骤一
-        Time.sleep(1);
+        Thread.sleep(1);
         //选择邮箱
         driver.findElement(By.xpath(step1.get("choiceEmail").toString())).click();
-        Time.sleep(1);
+        Thread.sleep(1);
         //输入学校
         driver.findElement(By.xpath(step1.get("schoolName").toString())).sendKeys(authInfo.get("schoolName").toString());
-        Time.sleep(1);
+        Thread.sleep(1);
         //选择学校
         driver.findElement(By.xpath(step1.get("schoolNameButton").toString())).click();
-        Time.sleep(1);
+        Thread.sleep(1);
         //输入理由
         driver.findElement(By.xpath(step1.get("planToUse").toString())).sendKeys(authInfo.get("planToUse").toString());
-        Time.sleep(1);
+        Thread.sleep(1);
         //点击下一步
         driver.findElement(By.xpath(step1.get("nextButton").toString())).click();
         while (true){
@@ -92,18 +94,18 @@ public class StuAuthInfo {
             }
         }
         //步骤二
-        Time.sleep(1);
+        Thread.sleep(1);
         Select select = new Select(driver.findElement(By.xpath(step2.get("ProofType").toString())));
         select.selectByValue("1");
-        Time.sleep(1);
+        Thread.sleep(1);
         System.out.println("开始上传图片");
         driver.findElement(By.xpath(step2.get("takePicture").toString())).click();
-        Time.sleep(1);
+        Thread.sleep(1);
         while(isElementExist(driver,step2.get("takePictureButton").toString())){
              driver.findElement(By.xpath(step2.get("takePictureButton").toString())).click();
-            Time.sleep(1);
+            break;
         }
-        Time.sleep(5);
+        Thread.sleep(5);
         driver.findElement(By.xpath(step2.get("processButton").toString())).click();
         System.out.println("等待认证结果");
         //在浏览器的新标签页打开一个新页面（https://education.github.com）
@@ -126,13 +128,18 @@ public class StuAuthInfo {
         try {
             driver.findElement(By.xpath(xpath));
             return true;
-        } catch (NoSuchElementException e) {
+        } catch (Exception e) {
             return false;
         }
     }
 
+    /**
+     * 确认元素是否存在,存在true，不存在false
+     */
+
+
     public static void main(String[] args) throws InterruptedException {
         StuAuthInfo stuAuthInfo = new StuAuthInfo();
-        stuAuthInfo.account(true);
+        stuAuthInfo.account(false);
     }
 }
