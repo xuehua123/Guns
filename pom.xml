@@ -26,6 +26,7 @@
         <mysql-connector-java.version>8.0.21</mysql-connector-java.version>
         <roses.kernel.version>7.2.4</roses.kernel.version>
         <docker.img.version>latest</docker.img.version>
+        <selenium.version>4.7.1</selenium.version>
     </properties>
 
     <dependencies>
@@ -40,12 +41,12 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.7.1</version>
+            <version>${selenium.version}</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-chrome-driver</artifactId>
-            <version>4.7.1</version>
+            <version>${selenium.version}</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
