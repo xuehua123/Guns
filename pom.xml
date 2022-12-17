@@ -213,12 +213,13 @@
             <version>${mysql-connector-java.version}</version>
         </dependency>
 
+        <!--mybatis-plus-->
+       <!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus</artifactId>
+            <version>3.5.1</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
@@ -228,12 +229,39 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations -->
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-codegen-maven-plugin</artifactId>
+            <version>3.0.0-rc1</version>
+        </dependency>
+
 
     </dependencies>
 
     <build>
         <finalName>guns</finalName>
         <plugins>
+            <plugin>
+                <groupId>io.swagger</groupId>
+                    <artifactId>swagger-codegen-maven-plugin</artifactId>
+                    <version>3.0.0-rc1</version>
+                <executions>
+                 <execution>
+                     <configuration>
+                   <inputSpec>C:\Users\xh\Guns\src\main\resources\stuAuthInfo.yml</inputSpec>
+                   <language>java</language>
+                   <configOptions>
+                    <sourceFolder>C:\Users\xh\Guns\src\main\java\cn\stylefeng\guns\modular\test\service</sourceFolder>
+                    <library>resteasy</library>
+                   </configOptions>
+                  </configuration>
+                  <goals>
+                   <goal>generate</goal>
+                  </goals>
+                 </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>

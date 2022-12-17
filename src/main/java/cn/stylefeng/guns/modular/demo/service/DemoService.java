@@ -18,6 +18,7 @@ public class DemoService {
      * @date 2021/1/24 10:58
      */
     public void demoService(){
+        System.out.println("我是示例服务");
         System.out.println("这是一个demo方法");
     }
 

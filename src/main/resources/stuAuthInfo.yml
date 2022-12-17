@@ -1,0 +1,46 @@
+authInfo:
+  schoolName: Hong Kong Institute of Technology
+  planToUse: I hope to get the student certification of Github, because the certification of your organization is more authoritative and convenient for other development certifications to use. At the same time, I also want to learn more project knowledge on github and use it. I can also write the code I wrote. Upload to the library to share. The main purpose is to learn and use this student certification, I hope github will give certification, thank you.
+
+register:
+  registerUrl: https://github.com/signup?source=login
+  email: //*[@id="email"]
+  emailButton: //*[@id="email-container"]/div[2]/button
+  password: //*[@id="password"]
+  passwordButton: //*[@id="password-container"]/div[2]/button
+  username: //*[@id="login"]
+  usernameButton: //*[@id="username-container"]/div[2]/button
+  reciveEmail: //*[@id="opt_in"]
+  reciveEmailButton: //*[@id="opt-in-container"]/div[2]/button
+  verifyButton: //*[@id="home_children_button"]
+  createButton: //*[@id="captcha-and-submit-container"]/button
+  enterCode1: /html/body/div[1]/div[4]/main/div[2]/div[1]/div[1]/div/launch-code/form/fieldset/div/input[1]
+  enterCode2: /html/body/div[1]/div[4]/main/div[2]/div[1]/div[1]/div/launch-code/form/fieldset/div/input[2]
+  enterCode3: /html/body/div[1]/div[4]/main/div[2]/div[1]/div[1]/div/launch-code/form/fieldset/div/input[3]
+  enterCode4: /html/body/div[1]/div[4]/main/div[2]/div[1]/div[1]/div/launch-code/form/fieldset/div/input[4]
+  enterCode5: /html/body/div[1]/div[4]/main/div[2]/div[1]/div[1]/div/launch-code/form/fieldset/div/input[5]
+  enterCode6: /html/body/div[1]/div[4]/main/div[2]/div[1]/div[1]/div/launch-code/form/fieldset/div/input[6]
+  enterCode7: /html/body/div[1]/div[4]/main/div[2]/div[1]/div[1]/div/launch-code/form/fieldset/div/input[7]
+  enterCode8: /html/body/div[1]/div[4]/main/div[2]/div[1]/div[1]/div/launch-code/form/fieldset/div/input[8]
+
+login:
+  loginUrl:
+
+
+step1:
+  step1Url: https://education.github.com/discount_requests/pack_application
+  choiceEmail: //*[@id="discount_request_school_email_yip5640163_com"]
+  schoolName: //*[@id="school-input"]
+  schoolNameButton: //*[@id="items-popup-option-0"]
+  planToUse: //*[@id="discount_request_note"]
+  nextButton: //*[@id="new_discount_request"]/div[4]/input
+
+step2:
+  takePicture: //*[@id="edit_discount_request"]/div/div[2]/div/div[2]/p[2]/button
+  takePictureButton: //*[@id="edit_discount_request"]/div/div[3]/div/div[2]/div/button[1]
+  ProofType: //*[@id="discount_request_attachment_proof_type"]
+  ProofTypeButton: //*[@id="discount_request_attachment_proof_type"]/option[2]
+  processButton: //*[@id="btnProcessMyApplication"]
+  cancelButton: /html/body/div/main/div/div/div[1]/div/div[7]/a[2]
+
+
