@@ -1,9 +1,10 @@
 package cn.stylefeng.guns.modular.test.service;
 
+import cn.stylefeng.guns.modular.util.BaseInfoGeneration;
+import cn.stylefeng.guns.modular.util.JpgUtils;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
-import org.springframework.beans.factory.config.YamlMapFactoryBean;
 
-import java.rmi.MarshalledObject;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -37,16 +38,29 @@ public class AuthpictureService {
         }
         for (int i = 0; i < number; i++) {
             String image_name = image_dir + "\\" + "always" + ".png";
-            getPicture(url, schoolName, submitDate);
-
+            getPicture(schoolName, image_name);
         }
 
 
     }
 
-    private void getPicture(String url, String schoolName, String submitDate) {
+    /**
+     * 生成图片
+     * @param schoolName 学校名称
+     * @param filePath 生成图片路径，包含文件名
+     * @throws IOException
+     */
+    private void getPicture(String schoolName, String filePath) {
+        String studentName = BaseInfoGeneration.getName();
+        String dateOfBirth = BaseInfoGeneration.randomBirthday();
+        String certificateNo = BaseInfoGeneration.getCardNo();
+        String updateTime = BaseInfoGeneration.getUpdateTime();
 
+        try {
+            JpgUtils.genJpg(studentName, dateOfBirth, certificateNo, schoolName, updateTime, filePath);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-
 
 }
