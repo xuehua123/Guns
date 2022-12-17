@@ -29,14 +29,23 @@
     </properties>
 
     <dependencies>
-
+         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.7.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-chrome-driver</artifactId>
+            <version>4.7.1</version>
+        </dependency>
         <!--认证和鉴权模块-->
         <dependency>
             <groupId>cn.stylefeng.roses</groupId>
             <artifactId>auth-spring-boot-starter</artifactId>
             <version>${roses.kernel.version}</version>
         </dependency>
-
         <!--安全模块-->
         <dependency>
             <groupId>cn.stylefeng.roses</groupId>
@@ -223,6 +232,16 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.seleniumhq.selenium</groupId>
+                    <artifactId>selenium-java</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.seleniumhq.selenium</groupId>
+                    <artifactId>selenium-java</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
@@ -243,26 +262,6 @@
         <finalName>guns</finalName>
         <plugins>
             <plugin>
-                <groupId>io.swagger</groupId>
-                    <artifactId>swagger-codegen-maven-plugin</artifactId>
-                    <version>3.0.0-rc1</version>
-                <executions>
-                 <execution>
-                     <configuration>
-                   <inputSpec>C:\Users\xh\Guns\src\main\resources\stuAuthInfo.yml</inputSpec>
-                   <language>java</language>
-                   <configOptions>
-                    <sourceFolder>C:\Users\xh\Guns\src\main\java\cn\stylefeng\guns\modular\test\service</sourceFolder>
-                    <library>resteasy</library>
-                   </configOptions>
-                  </configuration>
-                  <goals>
-                   <goal>generate</goal>
-                  </goals>
-                 </execution>
-                </executions>
-            </plugin>
-            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <executions>
@@ -272,6 +271,7 @@
                         </goals>
                     </execution>
                 </executions>
+                <!--排除内置tomcat-->
                 <configuration>
                     <!-- 如果没有该项配置，则devtools不会起作用，即应用不会restart -->
                     <fork>true</fork>

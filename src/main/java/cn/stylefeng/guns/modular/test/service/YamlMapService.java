@@ -11,7 +11,7 @@ public class YamlMapService {
         yamlMapService.returnYmlMap();
     }
 
-    public Map<String, Object> returnYmlMap() {
+    public static Map<String, Object> returnYmlMap() {
         //加载yml文件
         YamlMapFactoryBean yamlMapFactoryBean = new YamlMapFactoryBean();
         yamlMapFactoryBean.setResources(new ClassPathResource("stuAuthInfo.yml"));

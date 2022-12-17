@@ -23,8 +23,6 @@ register:
   enterCode7: /html/body/div[1]/div[4]/main/div[2]/div[1]/div[1]/div/launch-code/form/fieldset/div/input[7]
   enterCode8: /html/body/div[1]/div[4]/main/div[2]/div[1]/div[1]/div/launch-code/form/fieldset/div/input[8]
 
-login:
-  loginUrl:
 
 
 step1:
