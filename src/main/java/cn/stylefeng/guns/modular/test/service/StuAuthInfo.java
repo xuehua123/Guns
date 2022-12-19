@@ -57,7 +57,7 @@ public class StuAuthInfo {
                 System.out.println("进入步骤二");
                 break;
             }
-            Thread.sleep(2);
+            Thread.sleep(3);
         }
         //如果在步骤二则返回步骤一
         if(isElementExist(driver,step2.get("cancelButton").toString())){
@@ -71,8 +71,11 @@ public class StuAuthInfo {
                 }
             }
         }
+        while (!isElementExist(driver,step1.get("choiceEmail").toString())){
+           Thread.sleep(2);
+        }
         //步骤一
-        Thread.sleep(1);
+        Thread.sleep(3);
         //选择邮箱
         driver.findElement(By.xpath(step1.get("choiceEmail").toString())).click();
         Thread.sleep(1);

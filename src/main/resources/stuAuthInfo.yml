@@ -27,7 +27,7 @@ register:
 
 step1:
   step1Url: https://education.github.com/discount_requests/pack_application
-  choiceEmail: //*[@id="discount_request_school_email_yip5640163_com"]
+  choiceEmail: /html/body/div/main/div/div/div[1]/div/div[4]/div[2]/form/div[1]/fieldset/div/div[1]/div[1]/label/div/input
   schoolName: //*[@id="school-input"]
   schoolNameButton: //*[@id="items-popup-option-0"]
   planToUse: //*[@id="discount_request_note"]
