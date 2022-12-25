@@ -1,0 +1,186 @@
+
+/*wangly 20180522  新增样式、把页面上的样式提出来*/
+
+.sr_tab_title{width:200px; height:29px; position:absolute; left:-1px; top:-29px; border-right:1px solid #F90;}
+.sr_tab_title li{width:99px; height:27px; line-height:27px; border:1px solid #F90; border-right:none; float:left; display:inline; text-align:center; background:#FFFFFF; cursor:pointer;}
+.sr_tab_title li.onread{font-weight:bold; background:#FFF9DF; border-bottom:1px solid #FFF9DF;}
+.sr_tab_cnt{ border:1px dotted #F90; line-height:25px; padding:8px 12px; background:#FFF9DF; margin-top:32px; position:relative; text-align:left;}
+.sr_tab_cnt h3{font-size:16px; font-family:'微软雅黑'; text-align:center; line-height:32px; border-bottom:1px solid #F5D6A7; margin-bottom:6px;}
+.sr_title{ font-weight:bold;}
+.sr_cnt{ padding-left:24px;}
+.sr_zhizhi{ font-weight:bold; color:#066;}
+
+.tableTitle{position: relative; clear:both;font-size:24px; font-weight:normal; text-align:center; line-height:40px; padding:10px 0; color:#2EAFBB;}
+.tableTitle .xlzms-tit{
+    position: relative;
+    font-size:18px; 
+    height: 30px;
+    line-height: 30px;
+    margin-top:8px;
+}
+.tableTitle .zbrq-title{
+    position: absolute;
+    font-size: 14px;
+    top:8px;
+    right: 54px;
+    margin: 0;
+}
+.yzmBg{ height:128px;*height:131px;width:300px;}
+.div1{padding-bottom:20px;}
+.div2{
+    width:628px;
+    padding:1px;
+    margin:0 auto;
+}
+/*for en*/
+.tableTitle_en{clear:both;text-align:center; padding:10px 0; color:#2EAFBB; font:normal 20px/40px Tahoma,arial,sans-serif;}
+.en_table{border-top:1px solid #AACED8;border-left:1px solid #AACED8;margin:0 auto;}
+.en_table_noborder{border-top:none;}
+.en_table span{padding-left:5px; display:block;}
+.en_table th{font:bold 12px/1.5 Tahoma,arial,sans-serif;text-align:left;color:#333333;border-bottom:1px solid #AACED8;border-right:1px solid #AACED8;height:43px;}
+.en_table td{font:normal 12px/1.5 Tahoma,arial,sans-serif;text-align:left;color:#333333;border-bottom:1px solid #AACED8;border-right:1px solid #AACED8;height:43px;}
+.en_table h2{font:bold 14px/40px Tahoma,arial,sans-serif; padding-left:25px;text-align:left;}
+.en_table ol{ list-style:decimal; padding:0 20px 0 40px; line-height:21px;}
+.en_table ol li{list-style:decimal !important;}
+.en_photo1{width:132px; height:175px; position:relative;}
+.en_photo1 .en_photo1_img{position:absolute; left:6px; top:7px;}
+.en_photo2{width:301px; height:131px; position:relative;}
+.en_photo2 .en_photo2_bg{position:absolute; left:0px; top:0px;}
+.en_photo2 .en_photo2_2wm{position:absolute; left:5px; top:4px;}
+.en_photo2 .en_photo2_txm{position:absolute; left:135px; top:4px;}
+
+/*for cn*/
+.cn_table{border-top:1px solid #AACED8;border-left:1px solid #AACED8;margin:0 auto;}
+.cn_table_noborder{border-top:none;}
+.cn_table span{padding-left:5px; display:block;line-height: 1.2;}
+.cn_table th{font-family:"黑体";font-size:14px; font-weight:normal; text-align:center;color:#333333;border-bottom:1px solid #AACED8;border-right:1px solid #AACED8;height:43px;}
+.cn_table td{font-family:"楷体_GB2312","宋体";font-size:14px; text-align:left;color:#333333;border-bottom:1px solid #AACED8;border-right:1px solid #AACED8;height:43px;}
+th.cn_font1{letter-spacing:5px; text-align:left; padding-left:10px;}
+td.cn_font2{font-family:"Times New Roman", Times, serif;font-weight:bold;}
+
+.cn_table h2{ line-height:36px; font-size:16px; font-family:"黑体"; padding-left:20px;text-align:left;}
+.cn_table ol{ list-style:decimal; padding:0 20px 0 40px; line-height:25px; font-size:14px; font-family:"宋体";}
+.cn_photo1{width:132px; height:175px; position:relative;}
+.cn_photo1 .cn_photo1_img{position:absolute; left:6px; top:7px;}
+
+.zysx{width:560px;margin:0 auto;}
+.zysx table td{
+    border:0 !important;
+    padding:0 !important;
+    height:auto !important;
+    font-family:"宋体" !important;
+    font-size:14px !important;
+    text-align:left !important;
+    line-height:25px !important;
+}
+.logoBot{ margin-right:20px; height:68px; text-align:right;}
+.cn_photo2{width:301px; height:131px; position:relative;}
+.cn_photo2 .cn_photo2_bg{position:absolute; left:0px; top:0px;}
+.cn_photo2 .cn_photo2_2wm{position:absolute; left:5px; top:4px;}
+.cn_photo2 .cn_photo2_txm{position:absolute; left:135px; top:4px;}
+.m_s_r a.dcwjA{
+display: inline-block;
+width: 104px;
+height: 28px;
+line-height: 28px;
+text-align: center;
+background: #fff;
+color: #0066cc;
+border: 1px solid #0066cc;
+border-radius: 5px;
+margin-top:5px;
+}
+.m_s_r a.dcwjA:hover {
+    background: #0066cc;
+    color:#fff;
+    text-decoration: none;
+    -webkit-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+}
+
+/*学籍学历 中英文版 在线验证报告 网页版样式  huanghui 20171227*/
+.zbrq-title{
+    font-size: 16px;color: #333;line-height: 1.2;
+    display: block;
+    margin: 14px 10px 7px;font-weight: 400;
+}
+.by_img{    
+    vertical-align: bottom;
+}
+
+.div3 h2,.cn_table h2{
+    line-height: 36px;
+    font-size: 16px;
+    font-family: "黑体";
+    padding-left: 26px;
+    text-align: left;
+}
+.div3 td{position: relative;}
+.zysx{
+    width:572px;
+}
+/**在线验证*/
+.table_zxyz td{
+    border-bottom-color: #fff;
+    border-right-color: #fff;
+    font-size:12px;
+    text-align: center;    
+    line-height: 1.5;
+    color: #000;
+    font-family: "黑体";
+}
+.table_zxyz span{
+    padding-left:0;
+    display:block;
+    line-height: 1.5;
+}
+.table_zxyz .bg_ewm_div{
+    padding-top: 15px;
+}
+.table_zxyz .bg_ewm{
+    margin-bottom: 5px;
+}
+.vcode-block{
+    height: 170px;
+    width: 142px;
+    border-right: 1px solid #ccc;
+}
+.vcode-detail{
+    font-size: 12px;
+    display: block;
+    text-align: center;
+    padding-top: 70px;
+    font-weight:900;
+    font-family: "Times New Roman", Times, serif;
+}
+.vcode-title{  
+    color:#727272;  
+    margin-top: -18px;
+    display: block;
+    padding-left: 5px;
+    text-align: center;
+}
+
+.icon-mini{
+    margin-bottom: 5px;
+}
+.logoBot{
+    height:50px;
+    margin-top: 20px;
+    margin-right:20px;
+}
+/**英文版样式*/
+.tableTitle_en .zbrq-title{font-size: 14px;}
+.en_table td{
+    position: relative;
+}
+.en_table h2{
+    padding: 10px 25px 0px;
+}
+.cn_table .zxyz_xcx,.en_table .zxyz_xcx{
+    height: 210px;
+}
+.word_break{
+    word-break: break-all;
+}

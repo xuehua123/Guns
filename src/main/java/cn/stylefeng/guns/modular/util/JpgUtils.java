@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.concurrent.CountDownLatch;
@@ -12,6 +13,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+
+import static cn.stylefeng.guns.modular.util.FileUtils.getFileContent;
 
 /**
  * 生成图片工具类
@@ -214,5 +217,33 @@ public class JpgUtils {
         //删除文件夹
         file.delete();
         System.out.println("原始图片已删除");
+    }
+
+    /**
+     *
+     * @param name 姓名
+     * @param dateOfBirth 出生日期
+     * @param certificateNo 证书编号
+     * @param schoolName 学校名称
+     * @param updateTime 生成日期
+     * @param filePath 生成路径
+     */
+    public static void genJpgFromHtml(String name, String dateOfBirth, String certificateNo, String schoolName,
+                              String updateTime, String filePath) throws IOException {
+        String htmlContent = FileUtils.getFileContent("/github/temp.html");
+        htmlContent = htmlContent.replace("${name}", name);
+        htmlContent = htmlContent.replace("${dateOfBirth}", dateOfBirth);
+        htmlContent = htmlContent.replace("${certificateNo}", certificateNo);
+        htmlContent = htmlContent.replace("${schoolName}", schoolName);
+        htmlContent = htmlContent.replace("${updateTime}", updateTime);
+        String htmlPath = filePath + File.separator + "temp.html";
+        FileWriter fw = new FileWriter(htmlPath);
+        fw.write(htmlContent);
+        fw.close();
+
+        // 开始截图
+        String jpgFilePath = filePath + File.separator + "temp.jpg";
+        ScreenUtils.createScreen(htmlPath, jpgFilePath);
+
     }
 }

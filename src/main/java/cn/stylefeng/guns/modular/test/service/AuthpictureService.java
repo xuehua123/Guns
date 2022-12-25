@@ -3,6 +3,7 @@ package cn.stylefeng.guns.modular.test.service;
 import cn.stylefeng.guns.modular.util.BaseInfoGeneration;
 import cn.stylefeng.guns.modular.util.JpgUtils;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
+import org.bouncycastle.crypto.io.MacInputStream;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -14,12 +15,19 @@ import java.util.Map;
  * @author xh
  */
 public class AuthpictureService {
+
+
+    public static void main(String[] args) {
+        AuthpictureService authpictureService = new AuthpictureService();
+        authpictureService.shotStuInfo("hhah", 1);
+    }
+
     /**
      * 生成学生信息截图
      *
      * @param schoolName
      */
-    public void shotStuInfo(String schoolName,Integer number) {
+    public void shotStuInfo(String schoolName, Integer number) {
         YamlMapService yamlMapService = new YamlMapService();
         Map<String, Object> map = yamlMapService.returnYmlMap();
         Map<String,Object> authInfo = (Map<String, Object>) map.get("authInfo");
@@ -37,11 +45,9 @@ public class AuthpictureService {
             number = 1;
         }
         for (int i = 0; i < number; i++) {
-            String image_name = image_dir + "\\" + "always" + ".png";
-            getPicture(schoolName, image_name);
+            String filePath = "/Users/liqing/Downloads/git";
+            getPicture(schoolName, filePath);
         }
-
-
     }
 
     /**
@@ -57,7 +63,7 @@ public class AuthpictureService {
         String updateTime = BaseInfoGeneration.getUpdateTime();
 
         try {
-            JpgUtils.genJpg(studentName, dateOfBirth, certificateNo, schoolName, updateTime, filePath);
+            JpgUtils.genJpgFromHtml(studentName, dateOfBirth, certificateNo, schoolName, updateTime, filePath);
         } catch (Exception e) {
             e.printStackTrace();
         }

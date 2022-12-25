@@ -59,6 +59,13 @@ public class StuAuthInfo {
             }
             Thread.sleep(3);
         }
+
+        // 异步生成图片
+        new Thread(() -> {
+            AuthpictureService authpictureService = new AuthpictureService();
+            authpictureService.shotStuInfo(authInfo.get("schoolName").toString(), 1);
+        }).start();
+
         //如果在步骤二则返回步骤一
         if(isElementExist(driver,step2.get("cancelButton").toString())){
             driver.findElement(By.xpath(step2.get("cancelButton").toString())).click();
